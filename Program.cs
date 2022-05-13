@@ -2,10 +2,10 @@
 
 namespace DIO.Series
 {
-    class Program
+    public class Program
     {
-        static SerieRepositorio repositorio = new SerieRepositorio();
-        static void Main(string[] args)
+        private static SerieRepositorio repositorio = new SerieRepositorio();
+        private static void Main(string[] args)
         {
             string opcaoUsuario = ObterOpcaoUsuario();
 
@@ -31,7 +31,6 @@ namespace DIO.Series
 					case "C":
 						Console.Clear();
 						break;
-
 					default:
 						throw new ArgumentOutOfRangeException();
 				}
@@ -66,8 +65,6 @@ namespace DIO.Series
 			Console.Write("Digite o id da série: ");
 			int indiceSerie = int.Parse(Console.ReadLine());
 
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getvalues?view=netcore-3.1
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getname?view=netcore-3.1
 			foreach (int i in Enum.GetValues(typeof(Genero)))
 			{
 				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
@@ -116,8 +113,6 @@ namespace DIO.Series
 		{
 			Console.WriteLine("Inserir nova série");
 
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getvalues?view=netcore-3.1
-			// https://docs.microsoft.com/pt-br/dotnet/api/system.enum.getname?view=netcore-3.1
 			foreach (int i in Enum.GetValues(typeof(Genero)))
 			{
 				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
